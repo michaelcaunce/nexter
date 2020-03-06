@@ -1,0 +1,36 @@
+.features {
+  grid-column: centre-start / centre-end;
+  margin: 15rem 0;
+
+  // Set the features__feature to display in three columns
+  display: grid;
+  // The grid will always stay between 25rem and 1fr.
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 6rem;
+  // Ensure the text start on the same line across each feature
+  align-items: start;
+
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+
+
+  &__icon {
+    fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+    // Use span 2 instead of -1 as we didn't define the grid rows for feature elements. Implicit vs Explicit
+    grid-row: 1 / span 2;
+    // Move the icon up by 1rem
+    transform: translateY(-1rem);
+
+  }
+
+  &__text {
+    font-size: 1.7rem;
+  }
+}

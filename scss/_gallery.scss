@@ -1,0 +1,114 @@
+.gallery {
+  background-color: $color-grey-light-1;
+  grid-column: full-start / full-end;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(7, 5vw);
+  grid-gap: 1.5rem;
+  padding: 1.5rem;
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(14, auto);
+  }
+
+  @media only screen and (min-width: $bp-small) {
+    &__item {
+      &--1 {
+        // Position the first image to span two colums and two rows
+        grid-row: 1 / span 2;
+        grid-column: 1 / span 2;
+      }
+  
+      &--2 {
+        // Position the second image to span three colums and three rows
+        grid-row: 1 / span 3;
+        grid-column: 3 / span 3;
+      }
+  
+      &--3 {
+        // Position the third image to span one colums and two rows
+        grid-row: 1 / span 2;
+        grid-column: 6 / span 1;
+      }
+  
+      &--4 {
+        // Position the fourth image to span one colums and two rows (-1 being the end of the grid)
+        grid-row: 1 / span 2;
+        grid-column: 7 / -1;
+      }
+  
+      &--5 {
+        // Position the fifth image to span two colums and three rows
+        grid-row: 3 / span 3;
+        grid-column: 1 / span 2;
+      }
+  
+      &--6 {
+        // Position the sixth image to span two colums and two rows
+        grid-row: 4 / span 2;
+        grid-column: 3 / span 2;
+      }
+  
+      &--7 {
+        // Position the seventh image to span one colum and one row
+        grid-row: 4 / span 1;
+        grid-column: 5 / span 1;
+      }
+  
+      &--8 {
+        // Position the eighth image to span two columns and two rows (starting on the third row)
+        grid-row: 3 / span 2;
+        grid-column: 6 / span 2;
+      }
+  
+      &--9 {
+        // Position the ninth image to occupy the last column and span three rows (starting on the third row)
+        grid-row: 3 / span 3;
+        grid-column: 8 / -1;
+      }
+  
+      &--10 {
+        // Position the tenth image to span 1 column from the start and span two rows, starting at row 6
+        grid-row: 6 / span 2;
+        grid-column: 1 / span 1;
+      }
+  
+      &--11 {
+        // Position the eleventh image to span two columns (starting at the second column)
+        // and span 2 rows (starting on the sixth row)
+        grid-row: 6 / span 2;
+        grid-column: 2 / span 2;
+      }
+  
+      &--12 {
+        // Position to twelth image to span one column (starting on the fourth column)
+        // and span two rows (starting on the sixth row)
+        grid-row: 6 / span 2;
+        grid-column: 4 / span 1;
+      }
+  
+      &--13 {
+        // Position the thirteenth image to span three columns (starting on column 5)
+        // and span three rows (starting on the fifth row)
+        grid-row: 5 / span 3;
+        grid-column: 5 / span 3;
+      }
+  
+      &--14 {
+        // Position the final image to occupy the last column and span two rows (starting on row 6)
+        grid-row: 6 / span 2;
+        grid-column: 8 / -1;
+      }
+      
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    // Set the element to fit into the column/row
+    object-fit: cover;
+    display: block;
+  }
+}
